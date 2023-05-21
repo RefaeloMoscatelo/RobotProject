@@ -1,0 +1,220 @@
+﻿<Window x:Class="RobotProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:System="clr-namespace:System;assembly=mscorlib"
+ xmlns:local="clr-namespace:RobotProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="enumValues"
+       MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Direction"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Hello, please insert directions" HorizontalAlignment="Left" Margin="327,34,0,0" VerticalAlignment="Top" Width="140"/>
+        <TextBox Name="txt0"  PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="52,83,0,0"/>
+        <ComboBox Name="cbo0" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="144,84,0,0">
+            <ComboBox.Style>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=txt0, Path=Text}"  Value="">
+                            <Setter  Property="IsEnabled" Value="False" />
+                            <Setter  Property="SelectedIndex" Value="-1" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <Button Content="Start Moving" HorizontalAlignment="Left" Margin="673,159,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox Name="txt1" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="52,134,0,0"/>
+        <ComboBox Name="cbo1"  ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="144,135,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt1, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt2" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="52,183,0,0"/>
+        <ComboBox Name="cbo2"  ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="144,184,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt2, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt3" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="52,236,0,0"/>
+        <ComboBox Name="cbo3"  ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="144,237,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt3, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt4" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="52,289,0,0"/>
+        <ComboBox Name="cbo4" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="144,290,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt4, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt5" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="263,82,0,0"/>
+        <ComboBox Name="cbo5" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="353,83,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt5, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt6" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="257,133,0,0"/>
+        <ComboBox Name="cbo6" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="353,133,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt6, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt7" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="257,183,0,0"/>
+        <ComboBox Name="cbo7" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="353,183,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt7, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt8" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="257,236,0,0"/>
+        <ComboBox Name="cbo8" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="353,236,0,0">
+        <ComboBox.Style>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="IsEnabled" Value="True" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=txt8, Path=Text}"  Value="">
+                        <Setter Property="IsEnabled"  Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt9" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="257,289,0,0"/>
+        <ComboBox Name="cbo9" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="353,289,0,0" RenderTransformOrigin="0.342,6.788">
+            <ComboBox.Style>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=txt9, Path=Text}"  Value="">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt10" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="456,84,0,0"/>
+        <ComboBox Name="cbo10" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="552,84,0,0">
+            <ComboBox.Style>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=txt10, Path=Text}"  Value="">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt11" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="456,135,0,0"/>
+        <ComboBox Name="cbo11" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="552,135,0,0">
+            <ComboBox.Style>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=txt11, Path=Text}"  Value="">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt12" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="456,183,0,0"/>
+        <ComboBox Name="cbo12" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="552,183,0,0">
+            <ComboBox.Style>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=txt12, Path=Text}"  Value="">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt13" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="456,236,0,0"/>
+        <ComboBox Name="cbo13" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="552,236,0,0">
+            <ComboBox.Style>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=txt13, Path=Text}"  Value="">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <TextBox Name="txt14" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="456,289,0,0"/>
+        <ComboBox Name="cbo14" ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="552,289,0,0">
+            <ComboBox.Style>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=txt14, Path=Text}"  Value="">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <Label Name="lblError" Content="" HorizontalAlignment="Left" Margin="63,346,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
