@@ -32,7 +32,7 @@
             </ComboBox.Style>
         </ComboBox>
         <Button Content="Start Moving" HorizontalAlignment="Left" Margin="673,159,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox Name="txt1" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="52,134,0,0"/>
+        <TextBox  Name="txt1" PreviewTextInput="NumericOnly" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Margin="52,134,0,0"/>
         <ComboBox Name="cbo1"  ItemsSource="{Binding Source={StaticResource enumValues}}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="77" Margin="144,135,0,0">
         <ComboBox.Style>
             <Style TargetType="{x:Type ComboBox}">

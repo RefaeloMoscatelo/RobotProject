@@ -34,10 +34,17 @@ namespace RobotProject
     
     public partial class MainWindow : Window
     {
-
+        protected override void OnPreviewKeyDown(KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+            base.OnPreviewKeyDown(e);
+        }
         private void NumericOnly(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
+            Regex regex = new Regex("^[^0-9]+$");
             e.Handled = regex.IsMatch(e.Text);
         }
 
@@ -89,7 +96,6 @@ namespace RobotProject
                         sumUp += int.Parse(item.Meter);
                         break;
                     default:
-                        lblError.Content = "please rewrite instructions as follows: right/left/up/down and than one space and a number";
                         return;
                 }
             }
